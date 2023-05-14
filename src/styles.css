@@ -15,8 +15,9 @@ body {
 }
 
 .card {
+  font-weight: 700;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,12 +27,12 @@ body {
   padding: 25px;
   width: 150px;
   cursor: pointer;
-  transition: all 300ms;
+  box-shadow: 0 0 4px 2px #fff9;
+  transition: scale 300ms;
 }
 
 .card:hover {
   scale: 1.12;
-  box-shadow: 0 0 4px 2px #fff9;
 }
 
 .card>img {

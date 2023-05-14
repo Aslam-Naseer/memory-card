@@ -38,21 +38,24 @@ function shuffle(array) {
 }
 
 const CardSet = () => {
-  const [state, setState] = useState(0);
+  const [selected, setSelected] = useState([]);
 
-  const rerender = () => {
-    setState(state + 1);
+  const selectCard = (e) => {
+    const alien = e.target.dataset.alien;
+    setSelected([...selected, alien]);
+    console.log(selected);
   };
 
   const cards = [];
   shuffle(alienList);
   alienList.forEach((alien) =>
-    cards.push(<Card alien={alien} key={alien + Math.random()} />)
+    cards.push(
+      <Card alien={alien} key={alien + Math.random()} selectCard={selectCard} />
+    )
   );
   return (
     <>
       <div className="card-list">{cards}</div>
-      <button onClick={rerender}>Re-Render</button>
     </>
   );
 };
