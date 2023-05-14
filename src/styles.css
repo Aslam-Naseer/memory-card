@@ -1,4 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Nunito:wght@400;700&display=swap');
+
+
 body {
-  background-color: #121212;
+  background-color: #000;
   color: white;
+  font-family: 'Nunito', sans-serif;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 10px 15%;
+}
+
+.card {
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  text-transform: uppercase;
+  padding: 25px;
+  width: 150px;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.card:hover {
+  scale: 1.12;
+  box-shadow: 0 0 4px 2px #fff9;
+}
+
+.card>img {
+  height: 150px;
+  width: min(auto, 100%);
 }
