@@ -8,7 +8,7 @@ const Card = (props) => {
         alt={props.alien}
         data-alien={props.alien}
       />
-      <p>{props.alien}</p>
+      <p data-alien={props.alien}>{props.alien}</p>
     </div>
   );
 };
