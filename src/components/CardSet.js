@@ -24,7 +24,7 @@ function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
 
-  while (currentIndex != 0) {
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
@@ -37,13 +37,29 @@ function shuffle(array) {
   return array;
 }
 
-const CardSet = () => {
+const CardSet = (props) => {
   const [selected, setSelected] = useState([]);
+
+  const isNotSelected = (alien) => {
+    console.log(selected);
+    console.log();
+    return !selected.includes(alien);
+  };
+
+  const increaseScore = (alien) => {
+    props.increaseScore();
+    setSelected([...selected, alien]);
+  };
+
+  const resetScore = () => {
+    props.resetScore();
+    setSelected([]);
+  };
 
   const selectCard = (e) => {
     const alien = e.target.dataset.alien;
-    setSelected([...selected, alien]);
-    console.log(selected);
+    if (isNotSelected(alien)) increaseScore(alien);
+    else resetScore();
   };
 
   const cards = [];
