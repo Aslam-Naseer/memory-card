@@ -27,8 +27,8 @@ function App() {
         <Overlay score={highScore} removeOverlay={removeOverlay} />
       ) : (
         <>
-          <CardSet increaseScore={increaseScore} resetScore={resetScore} />
           <ScoreBoard score={score} highScore={highScore} />
+          <CardSet increaseScore={increaseScore} resetScore={resetScore} />
         </>
       )}
     </div>

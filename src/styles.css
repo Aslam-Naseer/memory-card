@@ -28,15 +28,15 @@ body {
 .omnitrix {
   position: absolute;
   margin: auto;
-  width: 90px;
-  bottom: -50px;
+  width: 80px;
+  bottom: -45px;
 }
 
 .card-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 10px 15%;
+  padding: 50px 15%;
 }
 
 .card {
@@ -105,4 +105,26 @@ body {
   object-fit: cover;
   max-height: calc(100vh - 200px);
   filter: blur(3px);
+}
+
+.scoreboard {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  padding: 55px 0 30px 0;
+}
+
+.score {
+  padding: 15px 45px;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+.current {
+  background-color: rgb(0, 208, 255);
+}
+
+.high-score {
+  background-color: rgb(208, 2, 26);
 }
