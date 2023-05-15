@@ -66,9 +66,9 @@ body {
 }
 
 .overlay {
-  top: 0;
+  top: 200px;
   position: absolute;
-  height: 100vh;
+  height: calc(100vh - 200px);
 
   display: flex;
   flex-direction: column;
