@@ -2,7 +2,7 @@ import "./styles.css";
 import Header from "./components/Header";
 import CardSet from "./components/CardSet";
 import ScoreBoard from "./components/ScoreBoard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Overlay from "./components/Overlay";
 
 function App() {
@@ -15,16 +15,19 @@ function App() {
   const increaseScore = () => setScore(score + 1);
   const resetScore = () => {
     if (highScore < score) setHighScore(score);
-    setScore(0);
     addOverlay();
   };
+
+  useEffect(() => {
+    if (!showOverlay) setScore(0);
+  }, [showOverlay]);
 
   return (
     <div className="App">
       <Header />
 
       {showOverlay ? (
-        <Overlay score={highScore} removeOverlay={removeOverlay} />
+        <Overlay score={score} removeOverlay={removeOverlay} />
       ) : (
         <>
           <ScoreBoard score={score} highScore={highScore} />
