@@ -21,11 +21,12 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
+
       {showOverlay ? (
         <Overlay score={highScore} removeOverlay={removeOverlay} />
       ) : (
         <>
-          <Header />
           <CardSet increaseScore={increaseScore} resetScore={resetScore} />
           <ScoreBoard score={score} highScore={highScore} />
         </>

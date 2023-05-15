@@ -1,4 +1,4 @@
-import backdrop from "../images/backdrop.png";
+import backdrop from "../images/backdrop.jpg";
 
 const Overlay = (props) => {
   return (
