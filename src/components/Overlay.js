@@ -1,6 +1,13 @@
 import backdrop from "../images/backdrop.jpg";
 
 const Overlay = (props) => {
+  const handleChange = (e) => {
+    const n = e.target.value;
+    e.target.previousElementSibling.value = n;
+    e.target.value = n;
+    props.changeMax(n);
+  };
+
   return (
     <div>
       <img src={backdrop} alt="" className="overlay-img" />
@@ -12,6 +19,19 @@ const Overlay = (props) => {
         <button onClick={props.removeOverlay}>
           Play {props.score > 0 ? "Again" : ""}
         </button>
+        <div className="diff">
+          <span>Difficulty: </span>
+          <output>{props.max}</output>
+          <input
+            type="range"
+            min={4}
+            max={16}
+            value={props.max}
+            placeholder="Max Cards"
+            id="difficulty"
+            onInput={handleChange}
+          />
+        </div>
       </div>
     </div>
   );

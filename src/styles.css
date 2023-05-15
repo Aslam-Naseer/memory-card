@@ -107,6 +107,12 @@ body {
   filter: blur(3px);
 }
 
+.diff {
+  display: flex;
+  gap: 12px;
+  font-weight: 500;
+}
+
 .scoreboard {
   display: flex;
   gap: 50px;

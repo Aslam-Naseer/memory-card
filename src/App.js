@@ -42,7 +42,7 @@ function shuffle(array) {
 }
 
 function App() {
-  const max = 8;
+  const [max, setMax] = useState(8);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [showOverlay, setShowOverlay] = useState(true);
@@ -50,6 +50,7 @@ function App() {
     shuffle(alienList).slice(0, max)
   );
 
+  const changeMax = (n) => setMax(n);
   const removeOverlay = () => setShowOverlay(false);
   const addOverlay = () => setShowOverlay(true);
   const increaseScore = () => setScore(score + 1);
@@ -67,14 +68,19 @@ function App() {
 
   useEffect(() => {
     if (score === max) setShowOverlay(true);
-  }, [score]);
+  }, [score, max]);
 
   return (
     <div className="App">
       <Header />
 
       {showOverlay ? (
-        <Overlay score={score} removeOverlay={removeOverlay} max={max} />
+        <Overlay
+          score={score}
+          removeOverlay={removeOverlay}
+          max={max}
+          changeMax={changeMax}
+        />
       ) : (
         <>
           <ScoreBoard score={score} highScore={highScore} />
