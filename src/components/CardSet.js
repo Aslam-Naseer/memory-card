@@ -1,25 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
 
-const alienList = [
-  "AlienX",
-  "Atomix",
-  "BigChill",
-  "DiamondHead",
-  "EchoEcho",
-  "Feedback",
-  "FourArms",
-  "Goop",
-  "Gravattack",
-  "GrayMatter",
-  "Heatblast",
-  "Humangousaur",
-  "Rath",
-  "Swampfire",
-  "Waybig",
-  "XLR8",
-];
-
 function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
@@ -38,6 +19,7 @@ function shuffle(array) {
 }
 
 const CardSet = (props) => {
+  const alienList = props.alienList;
   const [selected, setSelected] = useState([]);
 
   const isNotSelected = (alien) => {

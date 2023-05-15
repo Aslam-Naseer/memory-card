@@ -5,11 +5,50 @@ import ScoreBoard from "./components/ScoreBoard";
 import { useEffect, useState } from "react";
 import Overlay from "./components/Overlay";
 
+const alienList = [
+  "AlienX",
+  "Atomix",
+  "BigChill",
+  "DiamondHead",
+  "EchoEcho",
+  "Feedback",
+  "FourArms",
+  "Goop",
+  "Gravattack",
+  "GrayMatter",
+  "Heatblast",
+  "Humangousaur",
+  "Rath",
+  "Swampfire",
+  "Waybig",
+  "XLR8",
+];
+
+function shuffle(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
 function App() {
+  const max = 8;
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [showOverlay, setShowOverlay] = useState(true);
-  const max = 16;
+  const [currentAlienList, setCurrentAlienList] = useState(
+    shuffle(alienList).slice(0, max)
+  );
 
   const removeOverlay = () => setShowOverlay(false);
   const addOverlay = () => setShowOverlay(true);
@@ -22,6 +61,7 @@ function App() {
   useEffect(() => {
     if (!showOverlay) {
       setScore(0);
+      setCurrentAlienList(shuffle(alienList).slice(0, max));
     }
   }, [showOverlay]);
 
@@ -38,7 +78,12 @@ function App() {
       ) : (
         <>
           <ScoreBoard score={score} highScore={highScore} />
-          <CardSet increaseScore={increaseScore} resetScore={resetScore} />
+          <CardSet
+            increaseScore={increaseScore}
+            resetScore={resetScore}
+            max={max}
+            alienList={currentAlienList}
+          />
         </>
       )}
     </div>
