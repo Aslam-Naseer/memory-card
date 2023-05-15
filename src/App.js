@@ -9,6 +9,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [showOverlay, setShowOverlay] = useState(true);
+  const max = 16;
 
   const removeOverlay = () => setShowOverlay(false);
   const addOverlay = () => setShowOverlay(true);
@@ -19,15 +20,21 @@ function App() {
   };
 
   useEffect(() => {
-    if (!showOverlay) setScore(0);
+    if (!showOverlay) {
+      setScore(0);
+    }
   }, [showOverlay]);
+
+  useEffect(() => {
+    if (score === max) setShowOverlay(true);
+  }, [score]);
 
   return (
     <div className="App">
       <Header />
 
       {showOverlay ? (
-        <Overlay score={score} removeOverlay={removeOverlay} />
+        <Overlay score={score} removeOverlay={removeOverlay} max={max} />
       ) : (
         <>
           <ScoreBoard score={score} highScore={highScore} />
