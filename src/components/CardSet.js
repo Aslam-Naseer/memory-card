@@ -1,22 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
-
-function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
-
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
+import shuffle from "../utils/shuffle";
 
 const CardSet = (props) => {
   const alienList = props.alienList;

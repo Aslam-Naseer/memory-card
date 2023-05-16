@@ -4,7 +4,7 @@ import CardSet from "./components/CardSet";
 import ScoreBoard from "./components/ScoreBoard";
 import { useEffect, useState } from "react";
 import Overlay from "./components/Overlay";
-import { alienList } from "./images/imageList";
+import { alienList } from "./utils/imageList";
 
 function shuffle(array) {
   let currentIndex = array.length,
