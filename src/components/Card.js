@@ -1,4 +1,4 @@
-import { images } from "../images/imageList";
+import { images } from "../utils/imageList";
 
 const Card = (props) => {
   return (

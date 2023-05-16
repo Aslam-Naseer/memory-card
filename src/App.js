@@ -1,27 +1,11 @@
-import "./styles.css";
+import "./utils/styles.css";
 import Header from "./components/Header";
 import CardSet from "./components/CardSet";
 import ScoreBoard from "./components/ScoreBoard";
 import { useEffect, useState } from "react";
 import Overlay from "./components/Overlay";
 import { alienList } from "./utils/imageList";
-
-function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
-
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
+import shuffle from "./utils/shuffle";
 
 function App() {
   const [max, setMax] = useState(8);
