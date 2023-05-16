@@ -31,7 +31,6 @@ function App() {
     if (!showOverlay) {
       setScore(0);
       setCurrentAlienList(shuffle(alienList).slice(0, max));
-      console.log(max);
     }
   }, [showOverlay, max]);
 

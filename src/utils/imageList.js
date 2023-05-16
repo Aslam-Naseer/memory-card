@@ -173,6 +173,4 @@ const images = {
   XLR8,
 };
 
-console.log(images);
-
 export { images, alienList };

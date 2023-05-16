@@ -7,8 +7,6 @@ const CardSet = (props) => {
   const [selected, setSelected] = useState([]);
 
   const isNotSelected = (alien) => {
-    console.log(selected);
-    console.log();
     return !selected.includes(alien);
   };
 
