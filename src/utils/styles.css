@@ -38,6 +38,8 @@ body {
   gap: 30px;
   padding: 50px 15%;
   background-image: url(../images/bg_night.jpg);
+  background-size: auto 500px;
+  background-position: 200px;
 }
 
 .card {
@@ -121,6 +123,8 @@ body {
   gap: 50px;
   justify-content: center;
   padding: 55px 0 30px 0;
+  background-image: url(../images/bg_night.jpg);
+  background-size: 700px;
 }
 
 .score {
