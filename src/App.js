@@ -4,25 +4,7 @@ import CardSet from "./components/CardSet";
 import ScoreBoard from "./components/ScoreBoard";
 import { useEffect, useState } from "react";
 import Overlay from "./components/Overlay";
-
-const alienList = [
-  "AlienX",
-  "Atomix",
-  "BigChill",
-  "DiamondHead",
-  "EchoEcho",
-  "Feedback",
-  "FourArms",
-  "Goop",
-  "Gravattack",
-  "GrayMatter",
-  "Heatblast",
-  "Humangousaur",
-  "Rath",
-  "Swampfire",
-  "Waybig",
-  "XLR8",
-];
+import { alienList } from "./images/imageList";
 
 function shuffle(array) {
   let currentIndex = array.length,

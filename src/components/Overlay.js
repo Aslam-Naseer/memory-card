@@ -25,7 +25,7 @@ const Overlay = (props) => {
           <input
             type="range"
             min={4}
-            max={16}
+            max={56}
             value={props.max}
             placeholder="Max Cards"
             id="difficulty"
