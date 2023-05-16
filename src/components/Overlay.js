@@ -1,4 +1,4 @@
-import backdrop from "../images/backdrop.jpg";
+import backdrop from "../images/backdrop.png";
 
 const Overlay = (props) => {
   const handleChange = (e) => {

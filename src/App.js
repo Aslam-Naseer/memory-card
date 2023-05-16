@@ -1,4 +1,6 @@
 import "./utils/styles.css";
+import "./utils/external-styles.css";
+
 import Header from "./components/Header";
 import CardSet from "./components/CardSet";
 import ScoreBoard from "./components/ScoreBoard";
@@ -39,8 +41,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-
       {showOverlay ? (
         <Overlay
           score={score}
@@ -50,6 +50,7 @@ function App() {
         />
       ) : (
         <>
+          <Header />
           <ScoreBoard score={score} highScore={highScore} />
           <CardSet
             increaseScore={increaseScore}
